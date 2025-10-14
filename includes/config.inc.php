@@ -1,5 +1,4 @@
 <?php
 
-define('DBCONNSTRING', 'sqlite:../data/stocks.db'); 
-
+define('DBCONNSTRING', 'sqlite:data/stocks.db');
 ?>
