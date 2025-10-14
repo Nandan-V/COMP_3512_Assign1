@@ -64,7 +64,7 @@ if ($symbol != '') {
         ";
         $history = $pdo->query($sqlHist)->fetchAll(PDO::FETCH_ASSOC);
 
-        /* 4c) Build the summary numbers in a beginner-friendly way
+        /* 4c) 
                - We’ll walk the rows once and update our totals. */
         $days = 0;       // how many rows (days) we saw
         $histHigh = null;  // start as “unknown”
