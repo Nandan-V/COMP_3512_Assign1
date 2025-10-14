@@ -101,3 +101,107 @@ if ($symbol != '') {
 } // end if ($symbol != '')
 
 ?>
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Portfolio Project</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="container">
+
+  <!-- Top navigation -->
+  <div class="nav">
+    <a href="index.php">Home</a>
+    <a href="portfolio.php">Portfolio</a>
+    <a href="about.php">About</a>
+    <a href="api_tester.php">API Tester</a>
+  </div>
+
+  <div class="grid">
+    <!-- ========== LEFT: Sidebar list ========== -->
+    <div class="sidebar card">
+      <h2>Customers</h2>
+      <p class="small">Click a company to see its history.</p>
+
+      <div class="company-list">
+        <?php foreach ($companies as $c) { ?>
+          <div class="row">
+            <div class="col-symbol"><?php echo $c['symbol']; ?></div>
+            <div class="col-name"><?php echo $c['name']; ?></div>
+            <div class="col-action">
+              <a class="btn" href="index.php?symbol=<?php echo $c['symbol']; ?>">History</a>
+            </div>
+          </div>
+        <?php } ?>
+      </div>
+    </div>
+
+    <!-- ========== RIGHT: Main panel ========== -->
+    <div class="main">
+      <?php if ($symbol === '' || $company === false) { ?>
+        <!-- Nothing selected yet -->
+        <div class="card empty"><p>Select a company from the left.</p></div>
+
+      <?php } else { ?>
+        <!-- Company header -->
+        <div class="card">
+          <h1><?php echo $company['name']; ?> (<?php echo $company['symbol']; ?>)</h1>
+          <div class="info-grid">
+            <div><strong>Exchange:</strong> <?php echo $company['exchange']; ?></div>
+            <div><strong>Sector:</strong> <?php echo $company['sector']; ?></div>
+          </div>
+          <p class="small"><?php echo $company['description']; ?></p>
+        </div>
+
+        <!-- Simple summary boxes -->
+        <div class="card summary">
+          <div class="box">
+            <div class="box-label">History High</div>
+            <div class="box-value"><?php echo number_format($histHigh, 2); ?></div>
+          </div>
+          <div class="box">
+            <div class="box-label">History Low</div>
+            <div class="box-value"><?php echo number_format($histLow, 2); ?></div>
+          </div>
+          <div class="box">
+            <div class="box-label">Total Volume</div>
+            <div class="box-value"><?php echo number_format($totalVol); ?></div>
+          </div>
+          <div class="box">
+            <div class="box-label">Average Volume</div>
+            <div class="box-value"><?php echo number_format($avgVol); ?></div>
+          </div>
+        </div>
+
+        <!-- History table -->
+        <div class="card">
+          <h2>History (Jan–Mar 2019)</h2>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th>Date</th><th>Open</th><th>High</th><th>Low</th><th>Close</th><th>Volume</th>
+              </tr>
+              <?php foreach ($history as $h) { ?>
+                <tr>
+                  <td><?php echo $h['date']; ?></td>
+                  <td><?php echo $h['open']; ?></td>
+                  <td><?php echo $h['high']; ?></td>
+                  <td><?php echo $h['low']; ?></td>
+                  <td><?php echo $h['close']; ?></td>
+                  <td><?php echo $h['volume']; ?></td>
+                </tr>
+              <?php } ?>
+            </table>
+          </div>
+        </div>
+      <?php } ?>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
+
