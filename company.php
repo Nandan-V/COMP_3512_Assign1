@@ -15,6 +15,13 @@ if (!$company) {
     die('Company not found.');
 }
 
+// History Jan–Mar 2019: fetch date, open, high, low, close, volume for $symbol ordered by ascending date.
+$hsql = "SELECT date, open, high, low, close, volume
+         FROM history
+         WHERE symbol = '" . $symbol . "'
+           AND date >= '2019-01-01' AND date <= '2019-03-31'
+         ORDER BY date ASC";
+$hist = $pdo->query($hsql);  
 ?>
 
 
