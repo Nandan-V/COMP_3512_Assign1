@@ -25,12 +25,12 @@ $hist = $pdo->query($hsql);
 ?>
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <meta charset="utf-8"/>
-    <title><?php echo $company['symbol']; ?> Company</title>
-    <link rel="stylesheet" href="assets/styles.css">  
+  <meta charset="utf-8">
+  <title><?php echo $company['symbol']; ?> • Company</title>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 <div class="container">
@@ -40,16 +40,33 @@ $hist = $pdo->query($hsql);
   <a href="api_tester.php">API Tester</a>
 </div>
 
+  <div class="card">
+    <h1><?php echo $company['name']; ?> (<?php echo $company['symbol']; ?>)</h1>
+    <p><strong>Exchange:</strong> <?php echo $company['exchange']; ?></p>
+    <p><strong>Sector:</strong> <?php echo $company['sector']; ?></p>
+    <p><strong>Description:</strong> <?php echo $company['description']; ?></p>
+  </div>
 
-    <div class="box"> 
-      <h1>Company Page</h1>
-      <div class="">
-         
-      </div>
-    </div>
+  <div class="card">
+    <h2>Daily History (Jan–Mar 2019)</h2>
+    <table>
+      <tr>
+        <th>Date</th><th>Open</th><th>High</th><th>Low</th><th>Close</th><th>Volume</th>
+      </tr>
+      <?php foreach($hist as $h) { ?>
+        <tr>
+          <td><?php echo $h['date']; ?></td>
+          <td><?php echo $h['open']; ?></td>
+          <td><?php echo $h['high']; ?></td>
+          <td><?php echo $h['low']; ?></td>
+          <td><?php echo $h['close']; ?></td>
+          <td><?php echo $h['volume']; ?></td>
+        </tr>
+      <?php } ?>
+    </table>
+  </div>
 
+  <div class="footer">Back to <a href="index.php">Companies</a></div>
+</div>
 </body>
-<footer>
-</footer>
-
 </html>
