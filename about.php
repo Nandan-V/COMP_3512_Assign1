@@ -23,11 +23,11 @@
 
     <h3>What This Assignment Is About</h3>
     <p>This project is a simple portfolio web app that uses a SQLite database of stock information.
-    You can browse companies and view their Q1 2019 daily history. The app also exposes three small JSON APIs.</p>
+    You can browse companies and view their Q1 2019 daily history. The app also shows three JSON APIs.</p>
 
     <h3>Technologies Used</h3>
     <ul>
-      <li>PHP (beginner level; no frameworks)</li>
+      <li>PHP</li>
       <li>SQLite (via PDO) and the provided stocks.db file</li>
       <li>HTML + CSS (no external CSS libraries)</li>
       <li>XAMPP (Apache + PHP) on Windows</li>
@@ -39,7 +39,6 @@
     <h2>GitHub Repository</h2>
     <p>Link to the repo for this assignment:</p>
     <p><a href="https://github.com/Nandan-V/COMP_3512_Assign1" target="_blank">https://github.com/Nandan-V/COMP_3512_Assign1</a></p>
-    <p class="small">Replace the URL above with your actual repository link.</p>
   </div>
 
   <div class="card">
