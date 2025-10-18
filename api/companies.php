@@ -1,6 +1,5 @@
 <?php
 // api/companies.php 
-// used the comp 3512 course labs for help.
 
 require_once '../includes/db.inc.php'; // connects to database via $pdo
 
