@@ -9,6 +9,7 @@
 <div class="container">
   <div class="nav">
     <a href="index.php">Home</a>
+    <a href="portfolio.php">Portfolio</a>
     <a href="about.php">About</a>
     <a href="api_tester.php">API Tester</a>
   </div>
@@ -23,7 +24,7 @@
 
     <h3>What This Assignment Is About</h3>
     <p>This project is a simple portfolio web app that uses a SQLite database of stock information.
-    You can browse companies and view their Q1 2019 daily history. The app also shows three JSON APIs.</p>
+    You can browse companies and view their 2019 daily history. The app also shows three JSON APIs.</p>
 
     <h3>Technologies Used</h3>
     <ul>
