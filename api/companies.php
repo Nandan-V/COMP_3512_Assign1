@@ -1,20 +1,30 @@
 <?php
-// api/companies.php 
+// Move up one folder so relative paths (includes/...) work from /api
+chdir('..');
+require_once 'includes/db.inc.php';
+// Tell the browser this endpoint returns JSON
+header('Content-Type: application/json');
 
-require_once '../includes/db.inc.php'; // connects to database via $pdo
-
-header('Content-Type: application/json'); // JSON output
-header('Access-Control-Allow-Origin: *'); // allow API requests from any domain
-
-if (isset($_GET['ref']) && $_GET['ref'] !== '') { // single company by symbol
-    $stmt = $pdo->prepare("SELECT symbol, name, exchange, sector, description FROM companies WHERE symbol = ?"); 
-    $stmt->execute([$_GET['ref']]); // run safely
-    $row = $stmt->fetch(PDO::FETCH_ASSOC); // fetch single row
-    echo json_encode($row ?: ["error" => "Company not found"]); // return one or error
-    exit; // stop here
+// If a symbol is provided (?ref=AAPL), return just that company.
+// Otherwise, return a list of all companies (basic fields).
+if (isset($_GET['ref']) && $_GET['ref'] !== '') {
+  // One company by symbol
+  $sym = $_GET['ref'];
+  $sql = "SELECT symbol, name, exchange, sector, description
+          FROM companies
+          WHERE symbol = '" . $sym . "'
+          ORDER BY symbol";
+} else {
+  // All companies (no description to keep it lighter)
+  $sql = "SELECT symbol, name, exchange, sector
+          FROM companies
+          ORDER BY symbol";
 }
 
-$stmt = $pdo->query("SELECT symbol, name, sector FROM companies ORDER BY symbol"); // all companies
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC); // fetch all
-echo json_encode($rows); // output list
+// Run the query and fetch everything as associative arrays
+$st = $pdo->query($sql);
+$rows = $st->fetchAll(PDO::FETCH_ASSOC);
+
+// Output JSON 
+echo json_encode($rows);
 ?>
