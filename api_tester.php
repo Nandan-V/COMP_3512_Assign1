@@ -1,6 +1,12 @@
 <?php
-$exampleSymbol = 'AAPL';
-$exampleUserId = '1';
+
+// Simple list for the "API List" table (URL + Description)
+$apiSamples = array(
+  array('api/companies.php',                 'Returns all the companies/stocks'),
+  array('api/companies.php?ref=ADS',         'Return just a specific company/stock'),
+  array('api/portfolio.php?ref=1',           'Returns all the portfolios for a specific sample customer'),
+  array('api/history.php?ref=ADS',           'Returns the history information for a specific sample company')
+);
 ?>
 <!doctype html>
 <html>
@@ -13,39 +19,30 @@ $exampleUserId = '1';
 <div class="container">
   <div class="nav">
     <a href="index.php">Home</a>
+    <a href="portfolio.php">Portfolio</a>
     <a href="about.php">About</a>
     <a href="api_tester.php">API Tester</a>
   </div>
+
+  <!-- API List (sample hyperlinks + descriptions) -->
   <div class="card">
-    <h1>API Tester</h1>
-    <h3>Companies API</h3>
-    <p><a href="api/companies.php">All companies</a></p>
-    <p><a href="api/companies.php?ref=<?php echo $exampleSymbol; ?>">Single company (<?php echo $exampleSymbol; ?>)</a></p>
-    <form method="get" action="api/companies.php" class="input-row">
-      <input type="text" name="ref" placeholder="Symbol (e.g., AAPL)">
-      <button type="submit">Get Company</button>
-    </form>
+    <h1>API List</h1>
+    <table>
+      <tr>
+        <th>URL</th>
+        <th>Description</th>
+      </tr>
+      <?php for ($i = 0; $i < count($apiSamples); $i++) { ?>
+        <tr>
+          <td><a href="<?php echo $apiSamples[$i][0]; ?>"><?php echo '/' . $apiSamples[$i][0]; ?></a></td>
+          <td><?php echo $apiSamples[$i][1]; ?></td>
+        </tr>
+      <?php } ?>
+    </table>
+    <p>Click any link above to see the JSON response.</p>
   </div>
 
-  <div class="card">
-    <h3>History API</h3>
-    <p><a href="api/history.php?ref=<?php echo $exampleSymbol; ?>">History for <?php echo $exampleSymbol; ?> (Jan–Mar 2019)</a></p>
-    <form method="get" action="api/history.php" class="input-row">
-      <input type="text" name="ref" placeholder="Symbol (e.g., MSFT)">
-      <button type="submit">Get History</button>
-    </form>
-  </div>
-
-  <div class="card">
-    <h3>Portfolio API</h3>
-    <p><a href="api/portfolio.php?ref=<?php echo $exampleUserId; ?>">Portfolio for user <?php echo $exampleUserId; ?></a></p>
-    <form method="get" action="api/portfolio.php" class="input-row">
-      <input type="text" name="ref" placeholder="User ID (e.g., 1)">
-      <button type="submit">Get Portfolio</button>
-    </form>
-  </div>
-
-
+  
 </div>
 </body>
 </html>
