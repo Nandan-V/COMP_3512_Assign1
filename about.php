@@ -19,7 +19,7 @@
     <h1>Team Members</h1>
     <ul>
       <li><strong>Sri Nandan Bharadwaj</strong> </li>
-      <li><strong> Zain Choudry</strong></li>
+      <li><strong> Zain Choudhry</strong></li>
     </ul>
 
     <h3>What This Assignment Is About</h3>
