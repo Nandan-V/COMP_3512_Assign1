@@ -15,14 +15,14 @@ $rows = $st->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Companies</title>
+  <title>Company Info</title>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 <div class="container">
   <div class="nav">
     <a href="index.php">Home</a>
-    <a href="companies.php">Companies</a>
+    <a href="companies.php">Company's</a>
     <a href="about.php">About</a>
     <a href="api_tester.php">API Tester</a>
   </div>
@@ -30,7 +30,7 @@ $rows = $st->fetchAll(PDO::FETCH_ASSOC);
   <?php 
   // Card container for the companies section ?>
   <div class="card">
-    <h1>Companies</h1>
+    <h1>Company History</h1>
     <table>
       <tr>
         <th>Symbol</th><th>Name</th><th>Exchange</th><th>Sector</th>
