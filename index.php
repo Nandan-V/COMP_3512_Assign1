@@ -68,7 +68,7 @@ if ($userId > 0) {
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Home • Portfolio</title>
+  <title>Home | Portfolio</title>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
