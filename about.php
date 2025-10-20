@@ -7,9 +7,11 @@
 </head>
 <body>
 <div class="container">
+
+
   <div class="nav">
     <a href="index.php">Home</a>
-    <a href="portfolio.php">Portfolio</a>
+    <a href="companies.php">Companies</a>
     <a href="about.php">About</a>
     <a href="api_tester.php">API Tester</a>
   </div>
