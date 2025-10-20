@@ -41,9 +41,9 @@ $rows = $st->fetchAll(PDO::FETCH_ASSOC);
         // Navigates to the per-company view using the symbol as a parameter.
         ?>
         <tr>
-          <td><a href="company.php?symbol=<?php echo $r['symbol']; ?>"><?php echo $r['symbol']; ?></a></td>
+          <td><a href="company_details.php?symbol=<?php echo $r['symbol']; ?>"><?php echo $r['symbol']; ?></a></td>
           <?php // Show the company name as a link to the same details page. ?>
-          <td><a href="company.php?symbol=<?php echo $r['symbol']; ?>"><?php echo $r['name']; ?></a></td>
+          <td><a href="company_details.php?symbol=<?php echo $r['symbol']; ?>"><?php echo $r['name']; ?></a></td>
            <?php // Display the exchange for this company (e.g., NASDAQ, NYSE) ?>
           <td><?php echo $r['exchange']; ?></td>
           <?php // Display the sector for this company (e.g., Technology, Healthcare) ?>
