@@ -72,7 +72,6 @@ if ($userId > 0) {
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <?php include 'includes/banner.inc.php'; ?>
 <div class="container">
   <div class="nav">
     <a href="index.php">Home</a>
