@@ -136,8 +136,8 @@ if ($userId > 0) {
           $valFormatted = number_format((float)$r['value'], 2);
         ?>
           <tr>
-            <td><a href="company.php?symbol=<?php echo $r['symbol']; ?>"><?php echo $r['symbol']; ?></a></td>
-            <td><a href="company.php?symbol=<?php echo $r['symbol']; ?>"><?php echo $r['name']; ?></a></td>
+            <td><a href="company_details.php?symbol=<?php echo $r['symbol']; ?>"><?php echo $r['symbol']; ?></a></td>
+            <td><a href="company_details.php?symbol=<?php echo $r['symbol']; ?>"><?php echo $r['name']; ?></a></td>
             <td><?php echo $r['sector']; ?></td>
             <td><?php echo (int) $r['amount']; ?></td>
             <td>$<?php echo $valFormatted; ?></td>
