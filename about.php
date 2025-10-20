@@ -47,7 +47,7 @@
   <div class="card">
     <h2>Attribution</h2>
     <p>CSS layout and visual styling were drafted with help from ChatGPT (OpenAI) in Oct 2025.
-    I edited the styles to fit the assignment. No third-party CSS libraries or frameworks were used.</p>
+    We edited the styles to fit the assignment. No third-party CSS libraries or frameworks were used.</p>
   </div>
 
  
