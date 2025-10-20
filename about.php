@@ -20,7 +20,7 @@
   
     <h1>Team Members</h1>
     <ul>
-      <li><strong>Sri Nandan Bharadwaj</strong> </li>
+      <li><strong>Sri Nandan Bharadwaj Velamakanni</strong> </li>
       <li><strong> Zain Choudhry</strong></li>
     </ul>
 
