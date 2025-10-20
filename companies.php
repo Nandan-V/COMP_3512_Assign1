@@ -22,7 +22,7 @@ $rows = $st->fetchAll(PDO::FETCH_ASSOC);
 <div class="container">
   <div class="nav">
     <a href="index.php">Home</a>
-    <a href="companies.php">Companies</a>
+    <a href="companies.php">Company's</a>
     <a href="about.php">About</a>
     <a href="api_tester.php">API Tester</a>
   </div>
