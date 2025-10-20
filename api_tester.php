@@ -1,13 +1,13 @@
 <?php
-
 // Simple list for the "API List" table (URL + Description)
-$apiSamples = array(
-  array('api/companies.php',                 'Returns all the companies/stocks'),
-  array('api/companies.php?ref=ADS',         'Return just a specific company/stock'),
-  array('api/portfolio.php?ref=1',           'Returns all the portfolios for a specific sample customer'),
-  array('api/history.php?ref=ADS',           'Returns the history information for a specific sample company')
-);
+$apiSamples = [
+  ['api/companies.php',         'Returns all the companies/stocks'],
+  ['api/companies.php?ref=ADS', 'Return just a specific company/stock'],
+  ['api/portfolio.php?ref=1',   'Returns all the portfolios for a specific sample customer'],
+  ['api/history.php?ref=ADS',   'Returns the history information for a specific sample company']
+];
 ?>
+
 <!doctype html>
 <html>
 <head>
@@ -19,7 +19,7 @@ $apiSamples = array(
 <div class="container">
   <div class="nav">
     <a href="index.php">Home</a>
-    <a href="portfolio.php">Portfolio</a>
+    <a href="companies.php">Companies</a>
     <a href="about.php">About</a>
     <a href="api_tester.php">API Tester</a>
   </div>
